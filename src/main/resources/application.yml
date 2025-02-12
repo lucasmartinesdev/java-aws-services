@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: aws-secret
+
+  cloud:
+    aws:
+      secretsmanager:
+        region: us-east-1
+        endpoint: http://localhost:4566
+      credentials:
+        secret-key: test
+        access-key: test
+
+
+  datasource:
+    url: ${jdbc-url}
+    username: ${db-user}
+    password: ${db-password}
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  config:
+    import: aws-secretsmanager:test/secret/
+
