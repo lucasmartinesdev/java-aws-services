@@ -7,9 +7,12 @@ spring:
       secretsmanager:
         region: us-east-1
         endpoint: http://localhost:4566
-      credentials:
-        secret-key: test
-        access-key: test
+
+      sqs:
+        enabled: true
+        region: us-east-1
+        endpoint: http://localhost:4566
+        message-queue: ${notifications-queue}
 
 
   datasource:
@@ -21,5 +24,5 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
 
   config:
-    import: aws-secretsmanager:test/secret/
+    import: aws-secretsmanager:secret/
 
