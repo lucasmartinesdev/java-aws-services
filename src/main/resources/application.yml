@@ -13,6 +13,10 @@ spring:
         region: us-east-1
         endpoint: http://localhost:4566
         message-queue: ${notifications-queue}
+      sns:
+        enabled: true
+        region: us-east-1
+        endpoint: http://localhost:4566
 
 
   datasource:
